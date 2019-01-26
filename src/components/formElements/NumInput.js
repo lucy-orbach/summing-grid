@@ -1,7 +1,7 @@
 import React from 'react';
 
-const NumInput = React.memo(({value, error, onChange, ...props}) => (
-	<input type="number" value={value} onChange={onChange} />
+const NumInput = React.memo(({name, value, error, onChange, ...props}) => (
+	<input type="text" name={name} value={value} onChange={onChange} placeholder={0} />
 ));
 
 export default NumInput;
