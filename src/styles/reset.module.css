@@ -1,0 +1,26 @@
+body {
+	position: relative;
+	width: 100vw;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	color: #222;
+	-webkit-font-smoothing: antialiased;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1, h2, ul ,li {
+	-webkit-appearance: none;
+	margin: 0;
+	padding: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-before: 0;
+}
+
+ul {
+	list-style: none;
+}
