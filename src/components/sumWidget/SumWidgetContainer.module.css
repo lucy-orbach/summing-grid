@@ -1,0 +1,12 @@
+.container {
+	composes: section flex_child from "styles/layout.module.css";
+}
+.list {
+	composes: flex_col_4 from 'styles/layout.module.css';
+	border: 1px solid black;
+}
+
+.list li {
+	height: 100px;
+}
+

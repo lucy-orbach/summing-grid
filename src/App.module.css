@@ -1,0 +1,8 @@
+.app {
+  composes: flex_table from "styles/layout.module.css";
+  min-height: 100vh;
+}
+
+.main_container {
+  composes: flex_child from "styles/layout.module.css";
+}

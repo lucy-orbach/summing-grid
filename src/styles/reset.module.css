@@ -1,3 +1,6 @@
+@value colors: "styles/colors.module.css";
+@value gray-dk from colors;
+
 body {
 	position: relative;
 	width: 100vw;
@@ -5,7 +8,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	color: #222;
+	color: gray-dk;
 	-webkit-font-smoothing: antialiased;
 }
 

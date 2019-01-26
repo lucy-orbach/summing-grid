@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import 'App.modules.css';
+import React from 'react';
 import Header from 'components/header/Header';
 import SumWidgetContainer from 'components/sumWidget/SumWidgetContainer';
+import ErrorBoundary from 'components/common/ErrorBoundary';
+import styles from 'App.module.css';
 
 const App = () => (
-  <div className="App" data-test="app" >
+  <div className={styles.app} data-test="app" >
     <Header />
-    <main>
-      <section>
-        <SumWidgetContainer />
-      </section>
+    <main className={styles.main_container}>
+	    <ErrorBoundary>
+		    <SumWidgetContainer />
+	    </ErrorBoundary>
     </main>
   </div>
 );
