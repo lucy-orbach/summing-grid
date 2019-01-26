@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import './App.modules.css';
+import 'App.modules.css';
+import Header from 'components/header/Header';
+import SumWidgetContainer from 'components/sumWidget/SumWidgetContainer'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App" data-test="app" >
+    <Header />
+    <main>
+      <section>
+        <SumWidgetContainer />
+      </section>
+    </main>
+  </div>
+);
 
 export default App;
