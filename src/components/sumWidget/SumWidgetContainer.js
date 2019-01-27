@@ -20,9 +20,7 @@ export default class SumWidgetContainer extends Component {
 	static setInitialState(num) {
 		// gets Field Values
 		let fields = SumWidgetContainer.getFieldValues(num);
-		// gets InitialSum
-		let sum = 0;
-		return { fields, sum};
+		return { fields };
 	}
 
 	static getFieldValues(num) {
@@ -81,36 +79,29 @@ export default class SumWidgetContainer extends Component {
 
 	renderInputFields = () => {
 		// adds an input field according to the number of fieldsNumber
-		let { fields, fieldsNumber } = this.state;
-		let inputFields = [];
-		let addInput = i => {
-			let { value, error } = fields[i];
-			value = FormUtils.formatNumericValue(value);
-			inputFields.push(
-				<li key={i} className={error ? styles.cell_error : styles.cell}>
-					<NumInput name={i}
-					          data-test={`input-${i}`}
-					          value={value}
-					          error={error}
-					          onChange={this.handleInputChange}
-					          onClick={this.handleInputClick} />
-				</li> );
-		};
+		let { fields } = this.state;
+		let arr = Object.values(fields);
 
-		ObjectUtils.iterateOverNumber(fieldsNumber, i => addInput(i));
-
-		return inputFields;
+		return arr.map((field, i) => (
+			<li key={i} className={field.error ? styles.cell_error : styles.cell}>
+				<NumInput name={i}
+				          data-test={`input-${i}`}
+				          value={field.value}
+				          error={field.error}
+				          onChange={this.handleInputChange}
+				          onClick={this.handleInputClick} />
+			</li> ));
 	};
 
 	render() {
-		let {  sum } = this.state;
+		let {  sum, fieldsNumber } = this.state;
 		let total = FormUtils.formatToNearestValue(sum);
 		let hasError = this.validateErrors();
 
 		return (
 				<section className={styles.container} data-test="sum_widget_container">
-					{ this.state.fieldsNumber > 100 ?
-						<WidgetDynamicTitle title={"Fields Number should be <= 100!"}
+					{ fieldsNumber <2 || fieldsNumber > 100 ?
+						<WidgetDynamicTitle title={"Fields Number should be from 2 - 100!"}
 						                    hasError={true}
 						                    dataTest="fields_num_error" />
 						: <React.Fragment>
