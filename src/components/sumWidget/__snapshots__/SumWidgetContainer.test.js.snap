@@ -6,12 +6,15 @@ exports[`<SumWidgetContainer /> matches the snapshot 1`] = `
   data-test="sum_widget_container"
 >
   <React.Memo
+    dataTest="widget_title"
+    hasError={false}
     title="Hi! Let's sum 3 values :)"
   />
   <ul
     className="list"
   >
     <li
+      className="cell"
       key="0"
     >
       <React.Memo
@@ -24,6 +27,7 @@ exports[`<SumWidgetContainer /> matches the snapshot 1`] = `
       />
     </li>
     <li
+      className="cell"
       key="1"
     >
       <React.Memo
@@ -36,6 +40,7 @@ exports[`<SumWidgetContainer /> matches the snapshot 1`] = `
       />
     </li>
     <li
+      className="cell"
       key="2"
     >
       <React.Memo
@@ -48,6 +53,7 @@ exports[`<SumWidgetContainer /> matches the snapshot 1`] = `
       />
     </li>
     <li
+      className="cell"
       data-test="total"
       key="total"
     >

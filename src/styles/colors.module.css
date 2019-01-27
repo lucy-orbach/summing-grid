@@ -1,10 +1,9 @@
-@value gray-dk: #444;
+@value gray-dk: #2c2c2c;
+@value gray: #585858;
+@value gray-md: #b0b0b0;
 @value gray-lt: #eee;
 @value white: #fff;
-@value blue-lt: #acd1f7;
-@value blue-dk: #006699;
 @value orange-dk: #f63;
 @value orange-lt: #fd9128;
 
-@value primary: blue-dk;
-@value secondary: orange-lt;
+

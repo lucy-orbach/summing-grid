@@ -17,6 +17,14 @@ describe('<SumWidgetContainer />', () => {
 		expect( wrapper.find('[data-test="sum_widget_container"]').exists()).toBe(true);
 	});
 
+	it('amount of fields should be <= 100', () => {
+		let wrapper = shallow(<SumWidgetContainer fieldsNumber={100}/>);
+		expect(wrapper.find('[data-test="total"]').exists()).toBe(true);
+
+		 wrapper = shallow(<SumWidgetContainer fieldsNumber={101} />);
+			expect(wrapper.find('[data-test="total"]').exists()).toBe(false);
+	});
+
 
 	it('should add correct amount of fields', () => {
 		const wrapper = shallow(<SumWidgetContainer />);
@@ -59,13 +67,12 @@ describe('<SumWidgetContainer />', () => {
   });
 
 
-  it('if input is not a number it should display value entered, add error to field and display error text', () => {
+  it('if not a number => should display value entered, add error to field and display error text', () => {
 	  const wrapper = shallow(<SumWidgetContainer />);
 	  // remove comas
 	  let updatedInput = TestUtils.updateInput(wrapper,1,'3r');
 	  expect( wrapper.state().fields[1].value).toBe('3r');
 	  expect( wrapper.state().fields[1].error).toBe(true);
-	  expect( wrapper.state().error).toBe(NUM_ERROR);
   });
 
 

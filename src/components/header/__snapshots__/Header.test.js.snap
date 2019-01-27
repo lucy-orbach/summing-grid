@@ -2,10 +2,16 @@
 
 exports[`<Header /> matches the snapshot 1`] = `
 <header
+  className="flex_centered"
   data-test="header"
 >
-  <h1>
-    Summing Grid
+  <h1
+    className="header_title"
+  >
+    Summing
+    <span>
+      Grid
+    </span>
   </h1>
 </header>
 `;

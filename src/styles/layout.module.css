@@ -1,5 +1,8 @@
 @value colors: "styles/colors.module.css";
-@value gray-lt, blue-lt from colors;
+@value gray-lt from colors;
+@value queries: "styles/breakpoints.module.css";
+@value sm-device, md-device, md-lg-device, lg-device from queries;
+
 
 
 /* gaps */
@@ -36,21 +39,52 @@
 	align-self: stretch;
 }
 
-.flex_col_4 {
+.flex_grid {
 	composes: flex;
-	justify-content: flex-start;
-	align-items: center;
 	align-content: flex-start;
+	flex-wrap: wrap;
+}
+.flex_grid > * {
+	margin: 0;
+}
+.flex_grid > *:last-child {
+	flex-grow: 1;
 }
 
-.flex_col_4 > * {
-	flex: 0 0 25%;
-	border-right: 1px dotted gray-lt;
+@media sm-device {
+	.flex-columns {
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	.flex_grid > * {
+		flex: 0 0 100%;
+	}
 }
 
-.flex_col_4 > *:last-child {
-	border: none;
+@media md-device {
+	.flex-columns {
+		justify-content: flex-start;
+		align-items: center;
+		
+	}
+	.flex_grid > * {
+		flex: 0 0 50%;
+	}
 }
+
+@media lg-device {
+	.flex-columns {
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.flex_grid > * {
+		flex: 0 0 25%;
+	}
+}
+
+
+
 
 .section {
 	composes: flex_centered;

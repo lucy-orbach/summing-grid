@@ -1,9 +1,11 @@
 @value types: "styles/typography.module.css";
 @value fz-lg from types;
 @value colors: "styles/colors.module.css";
-@value gray-lt, white, primary, secondary from colors;
+@value gray, gray-lt, gray-dk, orange-dk,  white from colors;
 @value layout: "styles/layout.module.css";
 @value gap-md from layout;
+@value queries: "styles/breakpoints.module.css";
+@value sm-device, md-device, md-lg-device, lg-device from queries;
 
 .container {
 	composes: section flex_child from "styles/layout.module.css";
@@ -14,7 +16,7 @@
 }
 
 .list {
-	composes: flex_col_4 from 'styles/layout.module.css';
+	composes: flex_grid from 'styles/layout.module.css';
 	border: 1px solid black;
 }
 
@@ -25,7 +27,7 @@
 }
 
 .cell:last-child {
-	background-color: primary;
+	background-color: gray-dk;
 	color: white;
 }
 
@@ -33,24 +35,33 @@
 	composes: cell;
 }
 
-
-
 .cell input {
 	width: 100%;
 	height: 100%;
 	padding: 0 gap-md;
 	background-color: white;
-	color: primary;
-	text-align: right;
-	transition: all 0.3 ease-in-out;
+	color: gray-dk;
+	transition: all 0.3s ease-in-out;
 }
 .cell input:hover,
 .cell input:focus {
-	background-color: gray-lt;
+	background-color: gray;
+	color: white;
 }
 
 .cell_error input{
-	color: secondary;
+	color: orange-dk;
+}
+
+@media sm-device {
+	.cell input {
+		text-align: center;
+	}
+}
+@media md-lg-device {
+	.cell input {
+		text-align: right;
+	}
 }
 
 

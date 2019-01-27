@@ -1,0 +1,4 @@
+@value sm-device: (max-width: 360px);
+@value md-lg-device: (min-width: 361px);
+@value md-device:  (min-width: 361px) and (max-width: 720px);
+@value lg-device: (min-width: 721px);

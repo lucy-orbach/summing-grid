@@ -3,5 +3,6 @@ export default class ObjectUtils {
 		for ( let i of Array(num).keys() ) {
 			func(i);
 		}
+		return true;
 	};
 }

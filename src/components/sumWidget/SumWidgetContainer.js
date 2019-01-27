@@ -10,11 +10,11 @@ let { FIELDS, FIELD_TEMPLATE} = CONSTANTS.appConstants;
 let { FORM_INTRO, NUM_ERROR } = CONSTANTS.formConstants;
 
 export default class SumWidgetContainer extends Component {
-	state = { fields: null, sum: 0, fieldsNumber: FIELDS };
+	state = { fields: null, sum: 0, fieldsNumber: this.props.fieldsNumber || FIELDS };
 
-	static getDerivedStateFromProps(nProps, state) {
-		if ( !state.fields) return SumWidgetContainer.setInitialState(state.fieldsNumber);
-		return state;
+	static getDerivedStateFromProps(nProps, nState) {
+		if ( !nState.fields ) return SumWidgetContainer.setInitialState(nState.fieldsNumber);
+		return nState;
 	}
 
 	static setInitialState(num) {
@@ -93,22 +93,27 @@ export default class SumWidgetContainer extends Component {
 		};
 
 		ObjectUtils.iterateOverNumber(fieldsNumber, i => addInput(i));
+
 		return inputFields;
 	};
 
-	render() {
+	render() { console.log('swc rendering');
 		let {  sum } = this.state;
 		let total = FormUtils.formatToNearestValue(sum);
 		let hasError = this.validateErrors();
-
 		return (
-			<section className={styles.container} data-test="sum_widget_container">
-				<WidgetDynamicTitle title={hasError ?  NUM_ERROR : FORM_INTRO} hasError={hasError}/>
-				<ul className={styles.list}>
-					{this.renderInputFields()}
-					<li key="total" data-test="total" className={styles.cell}>{total}</li>
-				</ul>
-			</section>
+				<section className={styles.container} data-test="sum_widget_container">
+					{ this.state.fieldsNumber > 100 ?
+						<WidgetDynamicTitle title={"Fields Number should be <= 100!"} hasError={true} dataTest="fields_num_error" />
+						: <React.Fragment>
+								<WidgetDynamicTitle title={hasError ?  NUM_ERROR : FORM_INTRO} hasError={hasError}/>
+									<ul className={styles.list}>
+										{ this.renderInputFields()}
+										<li key="total" data-test="total" className={styles.cell}>{total}</li>
+									</ul>
+							</React.Fragment>
+					}
+				</section>
 		);
 	}
 }
