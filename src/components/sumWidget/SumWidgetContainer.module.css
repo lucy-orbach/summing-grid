@@ -1,12 +1,56 @@
+@value types: "styles/typography.module.css";
+@value fz-lg from types;
+@value colors: "styles/colors.module.css";
+@value gray-lt, white, primary, secondary from colors;
+@value layout: "styles/layout.module.css";
+@value gap-md from layout;
+
 .container {
 	composes: section flex_child from "styles/layout.module.css";
 }
+
+.banner_container {
+
+}
+
 .list {
 	composes: flex_col_4 from 'styles/layout.module.css';
 	border: 1px solid black;
 }
 
-.list li {
+.cell {
+	composes: flex_centered from 'styles/layout.module.css';
 	height: 100px;
+	font-size: fz-lg;
 }
+
+.cell:last-child {
+	background-color: primary;
+	color: white;
+}
+
+.cell_error {
+	composes: cell;
+}
+
+
+
+.cell input {
+	width: 100%;
+	height: 100%;
+	padding: 0 gap-md;
+	background-color: white;
+	color: primary;
+	text-align: right;
+	transition: all 0.3 ease-in-out;
+}
+.cell input:hover,
+.cell input:focus {
+	background-color: gray-lt;
+}
+
+.cell_error input{
+	color: secondary;
+}
+
 

@@ -8,6 +8,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
 	color: gray-dk;
 	-webkit-font-smoothing: antialiased;
 }
@@ -26,4 +27,16 @@ h1, h2, ul ,li {
 
 ul {
 	list-style: none;
+}
+
+input {
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	font-size: inherit;
+}
+
+input:focus {
+	outline: none;
 }

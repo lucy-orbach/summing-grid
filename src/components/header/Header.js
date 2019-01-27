@@ -1,8 +1,11 @@
 import React from 'react';
+import styles from 'styles/layout.module.css';
+import types from 'styles/typography.module.css';
+
 
 const Header = () => (
-	<header data-test="header">
-		<h1 >Summing Grid</h1>
+	<header className={styles.flex_centered} data-test="header">
+		<h1 className={types.header_title}>Summing <span>Grid</span></h1>
 	</header>
 );
 

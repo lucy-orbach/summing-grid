@@ -1,0 +1,41 @@
+@value colors: "styles/colors.module.css";
+@value gray-dk, blue-lt, primary, secondary from colors;
+@value layout: "styles/layout.module.css";
+@value gap-sm, gap-md, gap-lg from layout;
+
+
+@value fz-sm: 0.75rem;
+@value fz-regular: 1em;
+@value fz-md: 1.25rem;
+@value fz-lg: 1.5rem;
+@value fz-xlg: 2rem;
+
+.header_title {
+	margin: gap-md 0;
+	color: primary;
+	font-size: fz-lg;
+	text-transform: uppercase;
+}
+
+.header_title span {
+	display: inline-block;
+	margin-left: gap-md;
+	padding-left: gap-md;
+	color: blue-lt;
+	border-left: 1px solid secondary;
+}
+
+.banner {
+	padding: 0 gap-lg;
+	margin-bottom: gap-lg;
+	font-size: fz-xlg;
+	font-weight: bold;
+	text-align: center;
+	color: primary;
+	transition: all 0.3s ease-in-out;
+}
+
+.banner_error {
+	composes: banner;
+	color: secondary;
+}

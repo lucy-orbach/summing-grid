@@ -1,9 +1,12 @@
 import React from 'react';
+import styles from 'components/sumWidget/SumWidgetContainer.module.css';
+import types from 'styles/typography.module.css';
 
-const WidgetDynamicTitle = React.memo(({title, ...props}) => (
-	<div className={"container"}>
-		<h1 className={"title"} data-test="widget_title">
-			{title}
+
+const WidgetDynamicTitle = React.memo(({title, error, ...props}) => (
+	<div className={styles.banner_container}>
+		<h1 className={error ? types.banner_error : types.banner} data-test="widget_title">
+			{error ? error : title}
 		</h1>
 	</div>
 ));

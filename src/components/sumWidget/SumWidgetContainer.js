@@ -74,7 +74,7 @@ export default class SumWidgetContainer extends Component {
 			let { value, error } = fields[i];
 			value = FormUtils.formatNumericValue(value);
 			inputFields.push(
-				<li key={i}>
+				<li key={i} className={error ? styles.cell_error : styles.cell}>
 					<NumInput name={i}
 					          data-test={`input-${i}`}
 					          value={value}
@@ -94,10 +94,10 @@ export default class SumWidgetContainer extends Component {
 
 		return (
 			<section className={styles.container} data-test="sum_widget_container">
-				<WidgetDynamicTitle title={error?  error : FORM_INTRO } />
+				<WidgetDynamicTitle title={FORM_INTRO } error={error}/>
 				<ul className={styles.list}>
 					{this.renderInputFields()}
-					<li key="total" data-test="total">{total}</li>
+					<li key="total" data-test="total" className={styles.cell}>{total}</li>
 				</ul>
 			</section>
 		);

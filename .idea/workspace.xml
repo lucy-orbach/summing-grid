@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36901747-59cb-4f68-a3ca-cea83770fb04" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/styles/typography.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sumWidget/__snapshots__/SumWidgetContainer.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sumWidget/__snapshots__/SumWidgetContainer.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/formUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sumWidget/WidgetDynamicTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sumWidget/WidgetDynamicTitle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/layout.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layout.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/reset.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/reset.module.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,80 +23,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="App.test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SumWidgetContainer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="99" column="43" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SumWidgetContainer.test.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+            <state relative-caret-position="316">
+              <caret line="76" column="56" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="56" />
               <folding>
-                <element signature="e#652#659#0" />
-                <element signature="e#489#496#0" />
-                <element signature="e#976#1176#0" />
-                <element signature="e#1290#1457#0" />
-                <element signature="e#1657#1666#0" />
-                <element signature="e#2083#2092#0" />
-                <element signature="e#2421#2430#0" />
-                <element signature="e#1497#1590#0" />
+                <element signature="e#675#780#0" />
+                <element signature="e#811#954#0" />
+                <element signature="e#984#1141#0" />
+                <element signature="e#1199#1429#0" />
+                <element signature="e#1487#1579#0" />
+                <element signature="e#1693#1929#0" />
+                <element signature="e#1828#1924#0" />
+                <element signature="e#1855#1864#0" />
+                <element signature="e#1920#1927#0" />
+                <element signature="e#2003#2012#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WidgetDynamicTitle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/sumWidget/WidgetDynamicTitle.js">
+      <file leaf-file-name="SumWidgetContainer.module.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.module.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="69">
+              <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testUtils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/testUtils.js">
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/header/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="23">
+              <caret line="1" column="32" selection-start-line="1" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formUtils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/formUtils.js">
+      <file leaf-file-name="typography.module.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/typography.module.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-              <folding>
-                <element signature="e#464#724#0" />
-                <element signature="e#510#689#0" />
-                <element signature="e#563#685#0" />
-              </folding>
+            <state relative-caret-position="69">
+              <caret line="3" column="42" lean-forward="true" selection-start-line="2" selection-end-line="3" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.module.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/colors.module.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.module.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/styles/layout.module.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -103,8 +94,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -133,26 +124,28 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/styles/colors.modules.css" />
         <option value="$PROJECT_DIR$/src/styles/layout.modules.css" />
-        <option value="$PROJECT_DIR$/src/styles/reset.module.css" />
         <option value="$PROJECT_DIR$/src/App.modules.css" />
         <option value="$PROJECT_DIR$/src/App.module.css" />
         <option value="$PROJECT_DIR$/src/app.module.css" />
-        <option value="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.module.css" />
-        <option value="$PROJECT_DIR$/src/styles/layout.module.css" />
         <option value="$PROJECT_DIR$/src/utils/objectUtils.js" />
         <option value="$PROJECT_DIR$/src/components/formElements/NumInput.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/common/ErrorBoundary.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/header/Header.test.js" />
-        <option value="$PROJECT_DIR$/src/components/header/Header.js" />
         <option value="$PROJECT_DIR$/src/App.test.js" />
-        <option value="$PROJECT_DIR$/src/components/sumWidget/WidgetDynamicTitle.js" />
         <option value="$PROJECT_DIR$/src/utils/testUtils.js" />
         <option value="$PROJECT_DIR$/src/utils/constants.js" />
         <option value="$PROJECT_DIR$/src/utils/formUtils.js" />
-        <option value="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.js" />
         <option value="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.test.js" />
+        <option value="$PROJECT_DIR$/src/components/header/Header.module.css" />
+        <option value="$PROJECT_DIR$/src/components/header/Header.js" />
+        <option value="$PROJECT_DIR$/src/components/sumWidget/WidgetDynamicTitle.js" />
+        <option value="$PROJECT_DIR$/src/styles/reset.module.css" />
+        <option value="$PROJECT_DIR$/src/styles/typography.module.css" />
+        <option value="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.js" />
+        <option value="$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.module.css" />
+        <option value="$PROJECT_DIR$/src/styles/layout.module.css" />
       </list>
     </option>
   </component>
@@ -205,7 +198,27 @@
               <item name="summing-grid" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="formElements" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="summing-grid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="summing-grid" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="summing-grid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="summing-grid" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="sumWidget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="summing-grid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="summing-grid" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="summing-grid" type="b2602c69:ProjectViewProjectNode" />
@@ -262,13 +275,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24510000" />
+    <option name="totallyTimeSpent" value="29954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17291667" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -332,20 +345,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -436,6 +435,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#675#780#0" />
+            <element signature="e#811#954#0" />
+            <element signature="e#984#1141#0" />
+            <element signature="e#1199#1429#0" />
+            <element signature="e#1487#1579#0" />
+            <element signature="e#1693#1929#0" />
+            <element signature="e#1828#1924#0" />
+            <element signature="e#1855#1864#0" />
+            <element signature="e#1920#1927#0" />
+            <element signature="e#2003#2012#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -525,38 +536,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/colors.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/reset.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/layout.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -588,13 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/header/Header.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -623,27 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/sumWidget/WidgetDynamicTitle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="99" column="43" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/formUtils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -665,8 +620,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+        <state relative-caret-position="485">
+          <caret line="97" column="59" lean-forward="true" selection-start-line="97" selection-start-column="59" selection-end-line="97" selection-end-column="59" />
           <folding>
             <element signature="e#652#659#0" />
             <element signature="e#489#496#0" />
@@ -677,6 +632,84 @@
             <element signature="e#2421#2430#0" />
             <element signature="e#1497#1590#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/header/Header.module.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/sumWidget/WidgetDynamicTitle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/reset.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="32" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/typography.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="42" lean-forward="true" selection-start-line="2" selection-end-line="3" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="76" column="56" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="56" />
+          <folding>
+            <element signature="e#675#780#0" />
+            <element signature="e#811#954#0" />
+            <element signature="e#984#1141#0" />
+            <element signature="e#1199#1429#0" />
+            <element signature="e#1487#1579#0" />
+            <element signature="e#1693#1929#0" />
+            <element signature="e#1828#1924#0" />
+            <element signature="e#1855#1864#0" />
+            <element signature="e#1920#1927#0" />
+            <element signature="e#2003#2012#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/colors.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/sumWidget/SumWidgetContainer.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/layout.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
         </state>
       </provider>
     </entry>

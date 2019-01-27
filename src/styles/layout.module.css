@@ -1,10 +1,18 @@
 @value colors: "styles/colors.module.css";
-@value gray-lt from colors;
-/* flex classes */
+@value gray-lt, blue-lt from colors;
+
+
+/* gaps */
+@value gap-sm: 10px;
+@value gap-md: 20px;
+@value gap-lg: 40px;
+
+/* containers */
 .flex {
 	display: flex;
 	width: 100%;
 }
+
 .flex_centered {
 	composes: flex;
 	justify-content: center;
@@ -37,17 +45,17 @@
 
 .flex_col_4 > * {
 	flex: 0 0 25%;
-	border-right: 1px gray-lt;
+	border-right: 1px dotted gray-lt;
 }
 
 .flex_col_4 > *:last-child {
 	border: none;
 }
 
-/* section */
-
 .section {
-	composes: flex_table;
+	composes: flex_centered;
+	align-content: center;
 	padding: 20px;
 	background-color: gray-lt;
 }
+
