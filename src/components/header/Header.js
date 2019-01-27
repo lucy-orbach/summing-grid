@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Header = () => (
-	<header >
+	<header data-test="header">
 		<h1 >Summing Grid</h1>
 	</header>
 );

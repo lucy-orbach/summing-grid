@@ -2,9 +2,16 @@
 
 exports[`<App /> matches the snapshot 1`] = `
 <div
-  className="App"
+  className="app"
   data-test="app"
 >
   <Header />
+  <main
+    className="main_container"
+  >
+    <ErrorBoundary>
+      <SumWidgetContainer />
+    </ErrorBoundary>
+  </main>
 </div>
 `;

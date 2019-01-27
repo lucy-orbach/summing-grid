@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> matches the snapshot 1`] = `
+<header
+  data-test="header"
+>
+  <h1>
+    Summing Grid
+  </h1>
+</header>
+`;

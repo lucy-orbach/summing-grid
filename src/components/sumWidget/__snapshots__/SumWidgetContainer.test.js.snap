@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SumWidgetContainer /> matches the snapshot 1`] = `
+<section
+  className="container"
+  data-test="sum_widget_container"
+>
+  <React.Memo
+    title="Hi! Let's sum 3 values :)"
+  />
+  <ul
+    className="list"
+  >
+    <li
+      key="0"
+    >
+      <React.Memo
+        data-test="input-0"
+        error={null}
+        name={0}
+        onChange={[Function]}
+        onClick={[Function]}
+        value="0"
+      />
+    </li>
+    <li
+      key="1"
+    >
+      <React.Memo
+        data-test="input-1"
+        error={null}
+        name={1}
+        onChange={[Function]}
+        onClick={[Function]}
+        value="0"
+      />
+    </li>
+    <li
+      key="2"
+    >
+      <React.Memo
+        data-test="input-2"
+        error={null}
+        name={2}
+        onChange={[Function]}
+        onClick={[Function]}
+        value="0"
+      />
+    </li>
+    <li>
+      Total
+    </li>
+  </ul>
+</section>
+`;

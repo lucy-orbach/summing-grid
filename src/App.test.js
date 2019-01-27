@@ -1,8 +1,8 @@
 import React from 'react';
-import './setupTests';
+import 'setupTests';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import App from './App';
+import App from 'App';
 
 describe('<App />', () => {
 

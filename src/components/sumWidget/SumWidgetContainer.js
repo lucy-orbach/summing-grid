@@ -10,36 +10,36 @@ let { FIELDS, FIELD_TEMPLATE} = CONSTANTS.appConstants;
 let { FORM_INTRO, NUM_ERROR } = CONSTANTS.formConstants;
 
 export default class SumWidgetContainer extends Component {
-	state = { fields: null, sum: null, error: null };
+	state = { fields: null, sum: null, error: null, fieldsNumber: FIELDS };
 
 	static getDerivedStateFromProps(nProps, state) {
-		if ( !state.fields) return SumWidgetContainer.setInitialState();
+		if ( !state.fields) return SumWidgetContainer.setInitialState(state.fieldsNumber);
 		return state;
 	}
 
-	static setInitialState() {
+	static setInitialState(num) {
 		// gets Field Values
-		let fields = SumWidgetContainer.getFieldValues();
+		let fields = SumWidgetContainer.getFieldValues(num);
 		// gets InitialSum
 		let sum = 0;
 		return { fields, sum};
 	}
 
-	static getFieldValues() { console.log('getdre');
+	static getFieldValues(num) {
 		let fields = {};
 		let addField = (i) => fields[i] = FIELD_TEMPLATE;
 
-		ObjectUtils.iterateOverNumber(FIELDS, i => addField(i));
+		ObjectUtils.iterateOverNumber(num, i => addField(i));
 
 		return { ...fields };
 	}
 
 	handleInputChange = ({target: {name, value}, ...e}) => {
-		let error;
 		// remove empty spaces and  numeric format
 		value = FormUtils.clearInputValue(value);
-		if(!FormUtils.validateNumber(value)) error = true;
-		this.setNewValue(name, value, error);
+		//validate and set
+		if(!FormUtils.validateNumber(value)) this.handleInputError(name);
+		else this.setNewValue(name, parseInt(value));
 	};
 
 	handleInputClick = ({target: {name, value}, ...e}) => { console.log('click');
@@ -47,7 +47,12 @@ export default class SumWidgetContainer extends Component {
 		this.setNewValue(name, value);
 	};
 
+	handleInputError = (name) => {
+		this.setNewValue(name, 0, true);
+	};
+
 	setNewValue = (name, value, error) => {
+		console.log('value', value);
 		let newField = Object.assign({}, this.state.fields[name], { value, error: error });
 		this.setState({
 			error: error ? NUM_ERROR : null,
@@ -56,13 +61,15 @@ export default class SumWidgetContainer extends Component {
 	};
 
 	renderInputFields = () => {
+		let { fields, fieldsNumber } = this.state;
 		let inputFields = [];
 		let addInput = i => {
-			let { value, error } = this.state.fields[i];
+			let { value, error } = fields[i];
 			value = FormUtils.formatNumericValue(value);
 			inputFields.push(
 				<li key={i}>
 					<NumInput name={i}
+					          data-test={`input-${i}`}
 					          value={value}
 					          error={error}
 					          onChange={this.handleInputChange}
@@ -70,14 +77,14 @@ export default class SumWidgetContainer extends Component {
 				</li> );
 		};
 
-		ObjectUtils.iterateOverNumber(FIELDS, i => addInput(i));
+		ObjectUtils.iterateOverNumber(fieldsNumber, i => addInput(i));
 		return inputFields;
 	};
 
 	render() {
 		let { error } = this.state;
 		return (
-			<section className={styles.container}>
+			<section className={styles.container} data-test="sum_widget_container">
 				<WidgetDynamicTitle title={error?  error : FORM_INTRO } />
 				<ul className={styles.list}>
 					{this.renderInputFields()}
