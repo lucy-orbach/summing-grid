@@ -43,6 +43,7 @@ export default class SumWidgetContainer extends Component {
 	};
 
 	handleInputClick = ({target: {name, value}, ...e}) => {
+		// if value is 0 -> clear up input
 		if (value === '0') value = '';
 		this.setNewValue(name, value);
 	};
@@ -57,8 +58,10 @@ export default class SumWidgetContainer extends Component {
 	};
 
 	updateSum = () => {
+		// sums fields
 		let { fields, sum } = this.state;
 		sum = Object.values(fields).reduce((a,b) => {
+			// if value is null or has an error calculate as zero
 			let newValue = b.value && !b.error  ? parseFloat(b.value) : 0;
 			return a + newValue;
 		}, 0);
@@ -67,6 +70,7 @@ export default class SumWidgetContainer extends Component {
 	};
 
 	validateErrors = () => {
+		// verify all values are valid
 		let { fields } = this.state;
 		for (let i in fields) {
 			if (fields[i].error) return true;
@@ -76,6 +80,7 @@ export default class SumWidgetContainer extends Component {
 	};
 
 	renderInputFields = () => {
+		// adds an input field according to the number of fieldsNumber
 		let { fields, fieldsNumber } = this.state;
 		let inputFields = [];
 		let addInput = i => {
@@ -97,19 +102,25 @@ export default class SumWidgetContainer extends Component {
 		return inputFields;
 	};
 
-	render() { console.log('swc rendering');
+	render() {
 		let {  sum } = this.state;
 		let total = FormUtils.formatToNearestValue(sum);
 		let hasError = this.validateErrors();
+
 		return (
 				<section className={styles.container} data-test="sum_widget_container">
 					{ this.state.fieldsNumber > 100 ?
-						<WidgetDynamicTitle title={"Fields Number should be <= 100!"} hasError={true} dataTest="fields_num_error" />
+						<WidgetDynamicTitle title={"Fields Number should be <= 100!"}
+						                    hasError={true}
+						                    dataTest="fields_num_error" />
 						: <React.Fragment>
-								<WidgetDynamicTitle title={hasError ?  NUM_ERROR : FORM_INTRO} hasError={hasError}/>
+								<WidgetDynamicTitle title={hasError ?  NUM_ERROR : FORM_INTRO}
+								                    hasError={hasError} />
 									<ul className={styles.list}>
 										{ this.renderInputFields()}
-										<li key="total" data-test="total" className={styles.cell}>{total}</li>
+										<li key="total" data-test="total" className={styles.cell}>
+											{total}
+										</li>
 									</ul>
 							</React.Fragment>
 					}

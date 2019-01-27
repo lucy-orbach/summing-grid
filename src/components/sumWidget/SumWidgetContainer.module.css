@@ -12,12 +12,15 @@
 }
 
 .banner_container {
-
+	composes: slideUp_animation from 'styles/animations.module.css';
+	animation-delay: 0.6s;
 }
 
 .list {
 	composes: flex_grid from 'styles/layout.module.css';
 	border: 1px solid black;
+	composes: slideUp_animation from 'styles/animations.module.css';
+	animation-delay: 1.2s;
 }
 
 .cell {

@@ -11,8 +11,8 @@ const NumInput = React.memo(({name, value,  onChange, onClick, ...props}) => (
 ));
 
 NumInput.propTypes = {
-	name: PropTypes.string.isRequired,
-	value: PropTypes.string.isRequired,
+	name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	onChange: PropTypes.func.isRequired,
 	onClick: PropTypes.func,
 };
