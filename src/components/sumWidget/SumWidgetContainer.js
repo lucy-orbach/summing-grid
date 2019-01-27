@@ -10,7 +10,7 @@ let { FIELDS, FIELD_TEMPLATE} = CONSTANTS.appConstants;
 let { FORM_INTRO, NUM_ERROR } = CONSTANTS.formConstants;
 
 export default class SumWidgetContainer extends Component {
-	state = { fields: null, sum: 0, error: null, fieldsNumber: FIELDS };
+	state = { fields: null, sum: 0, fieldsNumber: FIELDS };
 
 	static getDerivedStateFromProps(nProps, state) {
 		if ( !state.fields) return SumWidgetContainer.setInitialState(state.fieldsNumber);
@@ -50,7 +50,6 @@ export default class SumWidgetContainer extends Component {
 	setNewValue = (name, value, error) => {
 		let newField = Object.assign({}, this.state.fields[name], { value, error: error });
 		this.setState({
-			error: error ? NUM_ERROR : null,
 			fields: { ...this.state.fields, [name]: newField },
 		}, () => {
 			if (value) this.updateSum();
@@ -65,6 +64,15 @@ export default class SumWidgetContainer extends Component {
 		}, 0);
 
 		this.setState({sum});
+	};
+
+	validateErrors = () => {
+		let { fields } = this.state;
+		for (let i in fields) {
+			if (fields[i].error) return true;
+		}
+
+		return false;
 	};
 
 	renderInputFields = () => {
@@ -89,12 +97,13 @@ export default class SumWidgetContainer extends Component {
 	};
 
 	render() {
-		let { error, sum } = this.state;
+		let {  sum } = this.state;
 		let total = FormUtils.formatToNearestValue(sum);
+		let hasError = this.validateErrors();
 
 		return (
 			<section className={styles.container} data-test="sum_widget_container">
-				<WidgetDynamicTitle title={FORM_INTRO } error={error}/>
+				<WidgetDynamicTitle title={hasError ?  NUM_ERROR : FORM_INTRO} hasError={hasError}/>
 				<ul className={styles.list}>
 					{this.renderInputFields()}
 					<li key="total" data-test="total" className={styles.cell}>{total}</li>
