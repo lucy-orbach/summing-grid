@@ -48,23 +48,65 @@ describe('<SumWidgetContainer />', () => {
 	});
 
 
-  it('on input change, value should remove format and be enter as numeric', () => {
+  it('on input change, value should remove format and set on state', () => {
 	  const wrapper = shallow(<SumWidgetContainer />);
 	  // remove comas
 	  let updatedInput = TestUtils.updateInput(wrapper,1,'3,000');
-	  expect( wrapper.state().fields[1].value).toBe(3000);
+	  expect( wrapper.state().fields[1].value).toBe('3000');
 	  // remove  whitespaces
 	   updatedInput = TestUtils.updateInput(wrapper,1,' 3,00 0');
-	  expect( wrapper.state().fields[1].value).toBe(3000);
+	  expect( wrapper.state().fields[1].value).toBe('3000');
   });
 
 
-  it('should handle error if input is not a number', () => {
+  it('if input is not a number it should display value entered, add error to field and display error text', () => {
 	  const wrapper = shallow(<SumWidgetContainer />);
 	  // remove comas
 	  let updatedInput = TestUtils.updateInput(wrapper,1,'3r');
-	  expect( wrapper.state().fields[1].value).toBe(0);
+	  expect( wrapper.state().fields[1].value).toBe('3r');
+	  expect( wrapper.state().fields[1].error).toBe(true);
 	  expect( wrapper.state().error).toBe(NUM_ERROR);
+  });
+
+
+  it('should sum valid values', () => {
+	  const wrapper = shallow(<SumWidgetContainer />);
+	  expect( wrapper.state().sum).toBe(0);
+	  let updateInput0 = TestUtils.updateInput(wrapper,0,'3');
+	  expect( wrapper.state().sum).toBe(3);
+	  let updateInput1 = TestUtils.updateInput(wrapper,1,'5x');
+	  expect( wrapper.state().sum).toBe(3);
+	   updateInput1 = TestUtils.updateInput(wrapper,1,'5');
+	  expect( wrapper.state().sum).toBe(8);
+	  let updateInput2 = TestUtils.updateInput(wrapper,2,'');
+	  expect( wrapper.state().sum).toBe(8);
+	  updateInput2 = TestUtils.updateInput(wrapper,2,'2');
+	  expect( wrapper.state().sum).toBe(10);
+  });
+
+
+  it('should display formatted total', () => {
+	  const wrapper = shallow(<SumWidgetContainer />);
+
+	  expect( wrapper.find('[data-test="total"]').text()).toBe("0.00");
+	  let updatedInput = TestUtils.updateInput(wrapper,1,'1.567');
+	  expect( wrapper.find('[data-test="total"]').text()).toBe('1.57');
+	  updatedInput = TestUtils.updateInput(wrapper,1,'15.67');
+	  expect( wrapper.find('[data-test="total"]').text()).toBe('15.7');
+	  updatedInput = TestUtils.updateInput(wrapper,1,'156.7');
+	  expect( wrapper.find('[data-test="total"]').text()).toBe('157');
+	  updatedInput = TestUtils.updateInput(wrapper,1,'1567');
+	  expect( wrapper.find('[data-test="total"]').text()).toBe('1.57 K');
+	  updatedInput = TestUtils.updateInput(wrapper,1,'1567000');
+	  expect( wrapper.find('[data-test="total"]').text()).toBe('1.57 M');
+	  updatedInput = TestUtils.updateInput(wrapper,1,'1567000000');
+	  expect( wrapper.find('[data-test="total"]').text()).toBe('1.57 B');
+	  updatedInput = TestUtils.updateInput(wrapper,1,'1567000000000');
+	  expect( wrapper.find('[data-test="total"]').text()).toBe('1.57 T');
+	  updatedInput = TestUtils.updateInput(wrapper,1,'1567000000000000');
+	  expect( wrapper.find('[data-test="total"]').text()).toBe('1.57 Q');
+	  updatedInput = TestUtils.updateInput(wrapper,1,'1567000000000000000');
+	  expect( wrapper.find('[data-test="total"]').text()).toBe('1.56 x 10e+17');
   });
 
 

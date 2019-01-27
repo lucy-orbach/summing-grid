@@ -47,8 +47,11 @@ exports[`<SumWidgetContainer /> matches the snapshot 1`] = `
         value="0"
       />
     </li>
-    <li>
-      Total
+    <li
+      data-test="total"
+      key="total"
+    >
+      0.00
     </li>
   </ul>
 </section>

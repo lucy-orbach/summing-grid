@@ -10,7 +10,7 @@ let { FIELDS, FIELD_TEMPLATE} = CONSTANTS.appConstants;
 let { FORM_INTRO, NUM_ERROR } = CONSTANTS.formConstants;
 
 export default class SumWidgetContainer extends Component {
-	state = { fields: null, sum: null, error: null, fieldsNumber: FIELDS };
+	state = { fields: null, sum: 0, error: null, fieldsNumber: FIELDS };
 
 	static getDerivedStateFromProps(nProps, state) {
 		if ( !state.fields) return SumWidgetContainer.setInitialState(state.fieldsNumber);
@@ -38,26 +38,33 @@ export default class SumWidgetContainer extends Component {
 		// remove empty spaces and  numeric format
 		value = FormUtils.clearInputValue(value);
 		//validate and set
-		if(!FormUtils.validateNumber(value)) this.handleInputError(name);
-		else this.setNewValue(name, parseInt(value));
+		if(!FormUtils.validateNumber(value)) this.setNewValue(name, value, true);
+		else this.setNewValue(name, value);
 	};
 
-	handleInputClick = ({target: {name, value}, ...e}) => { console.log('click');
+	handleInputClick = ({target: {name, value}, ...e}) => {
 		if (value === '0') value = '';
 		this.setNewValue(name, value);
 	};
 
-	handleInputError = (name) => {
-		this.setNewValue(name, 0, true);
-	};
-
 	setNewValue = (name, value, error) => {
-		console.log('value', value);
 		let newField = Object.assign({}, this.state.fields[name], { value, error: error });
 		this.setState({
 			error: error ? NUM_ERROR : null,
 			fields: { ...this.state.fields, [name]: newField },
+		}, () => {
+			if (value) this.updateSum();
 		});
+	};
+
+	updateSum = () => {
+		let { fields, sum } = this.state;
+		sum = Object.values(fields).reduce((a,b) => {
+			let newValue = b.value && !b.error  ? parseFloat(b.value) : 0;
+			return a + newValue;
+		}, 0);
+
+		this.setState({sum});
 	};
 
 	renderInputFields = () => {
@@ -82,13 +89,15 @@ export default class SumWidgetContainer extends Component {
 	};
 
 	render() {
-		let { error } = this.state;
+		let { error, sum } = this.state;
+		let total = FormUtils.formatToNearestValue(sum);
+
 		return (
 			<section className={styles.container} data-test="sum_widget_container">
 				<WidgetDynamicTitle title={error?  error : FORM_INTRO } />
 				<ul className={styles.list}>
 					{this.renderInputFields()}
-					<li>Total</li>
+					<li key="total" data-test="total">{total}</li>
 				</ul>
 			</section>
 		);
