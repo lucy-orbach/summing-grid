@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import WidgetDynamicTitle from 'components/sumWidget/WidgetDynamicTitle';
 import NumInput from 'components/formElements/NumInput';
 import * as CONSTANTS from 'utils/constants';
-import ObjectUtils from 'utils/objectUtils';
 import FormUtils from 'utils/formUtils';
 import styles from 'components/sumWidget/SumWidgetContainer.module.css';
 
@@ -25,9 +24,10 @@ export default class SumWidgetContainer extends Component {
 
 	static getFieldValues(num) {
 		let fields = {};
-		let addField = (i) => fields[i] = FIELD_TEMPLATE;
 
-		ObjectUtils.iterateOverNumber(num, i => addField(i));
+		for ( let i of Array(num).keys() ) {
+			fields[i] = FIELD_TEMPLATE;
+		}
 
 		return { ...fields };
 	}

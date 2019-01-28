@@ -6,9 +6,7 @@ import SumWidgetContainer from 'components/sumWidget/SumWidgetContainer';
 import TestUtils from 'utils/TestUtils';
 import * as CONSTANTS from 'utils/constants';
 //
-let { FIELDS, FIELD_TEMPLATE} = CONSTANTS.appConstants;
-let { FORM_INTRO, NUM_ERROR } = CONSTANTS.formConstants;
-
+let { FIELDS } = CONSTANTS.appConstants;
 
 describe('<SumWidgetContainer />', () => {
 
@@ -17,9 +15,12 @@ describe('<SumWidgetContainer />', () => {
 		expect( wrapper.find('[data-test="sum_widget_container"]').exists()).toBe(true);
 	});
 
-	it('amount of fields should be <= 100', () => {
+	it('Fields Number should be from 2 - 100', () => {
 		let wrapper = shallow(<SumWidgetContainer fieldsNumber={100}/>);
 		expect(wrapper.find('[data-test="total"]').exists()).toBe(true);
+
+		wrapper = shallow(<SumWidgetContainer fieldsNumber={1} />);
+		expect(wrapper.find('[data-test="total"]').exists()).toBe(false);
 
 		 wrapper = shallow(<SumWidgetContainer fieldsNumber={101} />);
 			expect(wrapper.find('[data-test="total"]').exists()).toBe(false);
